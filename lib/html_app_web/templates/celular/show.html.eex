@@ -1,0 +1,28 @@
+<h1>Celular</h1>
+
+<ul>
+
+  <li>
+    <strong>Modelo:</strong>
+    <%= @celular.modelo %>
+  </li>
+
+  <li>
+    <strong>Precio:</strong>
+    <%= @celular.precio %>
+  </li>
+
+  <li>
+    <strong>Stock:</strong>
+    <%= @celular.stock %>
+  </li>
+
+  <li>
+    <strong>Liberado:</strong>
+    <%= @celular.liberado %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.celular_path(@conn, :edit, @celular) %></span>
+<span><%= link "Back", to: Routes.celular_path(@conn, :index) %></span>

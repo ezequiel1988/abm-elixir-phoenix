@@ -1,0 +1,5 @@
+<h1>Edit Celular</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.celular_path(@conn, :update, @celular)) %>
+
+<span><%= link "Back", to: Routes.celular_path(@conn, :index) %></span>

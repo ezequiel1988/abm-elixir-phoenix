@@ -1,0 +1,42 @@
+<section class="section">
+
+
+<div class="container is-fluid">
+<h1 class="title">Listado de Celulares</h1>
+
+<div class="table-container">
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Liberado</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+<%= for celular <- @celulares do %>
+    <tr>
+      <td><%= celular.modelo %></td>
+      <td><%= celular.precio %></td>
+      <td><%= celular.stock %></td>
+      <td><%= celular.liberado %></td>
+
+      <td>
+          <button class="button is-primary"><%= link "Mostrar", to: Routes.celular_path(@conn, :show, celular) %></button>
+          <button class="button is-warning"><%= link "Editar", to: Routes.celular_path(@conn, :edit, celular) %></button>
+          <button class="button is-danger"><%= link "Borrar", to: Routes.celular_path(@conn, :delete, celular), method: :delete, data: [confirm: "Are you sure?"] %></button>
+
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+  <button class="button is-info"><%= link "Agregar", to: Routes.celular_path(@conn, :new) %></button>
+</div>
+</div>
+</section>
